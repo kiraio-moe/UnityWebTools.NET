@@ -1,0 +1,58 @@
+name: publish to nuget
+on:
+  push:
+    branches: [ "main" ] # Default release branch
+jobs:
+  publish:
+    name: Build, Pack & Publish
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+          dotnet-version: [ '6.0.x', '7.0.x' ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ matrix.dotnet-version }}
+          dotnet-quality: ga
+      # Publish
+      - name: publish on version change
+        id: publish_nuget
+        uses: Rebel028/publish-nuget@v2.8.0
+        with:
+          # Filepath of the project to be packaged, relative to root of repository
+          PROJECT_FILE_PATH: UnityWebTools.NET.csproj
+          
+          # NuGet package id, used for version detection & defaults to project name
+          PACKAGE_NAME: Kiraio.UnityWebTools.NET
+          
+          # Filepath with version info, relative to root of repository & defaults to PROJECT_FILE_PATH
+          # VERSION_FILE_PATH: Directory.Build.props
+
+          # Regex pattern to extract version info in a capturing group
+          # VERSION_REGEX: ^\s*<Version>(.*)<\/Version>\s*$
+
+          # Useful with external providers like Nerdbank.GitVersioning, ignores VERSION_FILE_PATH & VERSION_REGEX
+          # VERSION_STATIC: 1.0.0
+
+          # Flag to toggle git tagging, enabled by default
+          TAG_COMMIT: true
+
+          # Format of the git tag, [*] gets replaced with actual version
+          TAG_FORMAT: v*
+
+          # API key to authenticate with NuGet server, or a token, issued for GITHUB_USER if you use GPR
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+
+          # NuGet server uri hosting the packages, defaults to https://api.nuget.org
+          # NUGET_SOURCE: https://api.nuget.org
+
+          # Flag to toggle pushing symbols along with nuget package to the server, disabled by default
+          # INCLUDE_SYMBOLS: false
+
+          # Flag to throw an error when trying to publish an existing version of a package
+          THOW_ERROR_IF_VERSION_EXISTS: false
+
+          # Flag to add the `--no-build` option to the `dotnet pack` command. Enabled by default.
+          # PACK_NO_BUILD: true

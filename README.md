@@ -11,7 +11,7 @@
 
 ## Overview
 
-UnityWebTools.NET is a C# library designed to simplify the handling of `UnityWebData` _(*.data)_ files within Unity WebGL game by providing unpack & repack functionality to modify the game assets. This library serves as a supplementary addition to [AssetsTools.NET](https://github.com/nesrak1/AssetsTools.NET "AssetsTools.NET GitHub repository") library, enhancing your capabilities when working with Unity game data.
+UnityWebTools.NET is a C# library designed to simplify the handling of `UnityWebData` _(*.data)_ files within Unity WebGL game by providing unpack and repack functionality to modify the game assets. This library serves as a supplementary addition to [AssetsTools.NET](https://github.com/nesrak1/AssetsTools.NET "AssetsTools.NET GitHub repository") library, enhancing your capabilities when working with Unity game data.
 
 ## Key Features
 
@@ -28,7 +28,7 @@ Using UnityWebTools.NET is simple!
   dotnet add package Kiraio.UnityWebTools.NET --version <latest_version_available>
   ```
 
-- **Use** the methods:
+- **Start** using it:
 
   ```csharp
   // Important! Import the namespace.

@@ -1,4 +1,4 @@
-# UnityWebTools.NET
+# [UnityWebTools.NET](https://github.com/kiraio-moe/UnityWebTools.NET "UnityWebTools.NET GitHub repository")
 
 ## Table of Contents
 
@@ -8,6 +8,7 @@
 - [Contributing](#contributing)
 - [Credits](#credits)
 - [License](#license)
+- [Disclaimer](#disclaimer)
 
 ## Overview
 
@@ -15,8 +16,8 @@ UnityWebTools.NET is a C# library designed to simplify the handling of `UnityWeb
 
 ## Key Features
 
-- **Unpack UnityWebData**: UnityWebDataTools simplifies the process of unpacking `UnityWebData` files, allowing you to effortlessly access their contents.
-- **Repack UnityWebData**: With UnityWebDataTools, repacking `UnityWebData` files is a breeze, making it convenient to modify game's assets.
+- **Unpack UnityWebData**: UnityWebTools simplifies the process of unpacking `UnityWebData` files, allowing you to effortlessly access their contents.
+- **Repack UnityWebData**: With UnityWebTools, repacking `UnityWebData` files is a breeze, making it convenient to modify game's assets.
 
 ## Usage
 
@@ -34,7 +35,7 @@ Using UnityWebTools.NET is simple!
   // Important! Import the namespace.
   using Kiraio.UnityWebTools;
 
-  // Check if the file is valid UnityWebData file.
+  // Check if the file is a valid UnityWebData file.
   bool valid = UnityWebToolUtils.IsUnityWebData("WebGL.data");
 
   // Extract the UnityWebData (*.data) file.
@@ -45,7 +46,7 @@ Using UnityWebTools.NET is simple!
   // Compress folder as UnityWebData (*.data) file.
   // Pack(string sourceFolder, string outputFile (Optional)).
   // Return output file path.
-  Pack(output);
+  UnityWebTool.Pack(output);
   ```
 
 ## Contributing
@@ -55,7 +56,14 @@ Contributions are welcome! If you have suggestions, bug reports, or would like t
 ## Credits
 
 - [ChrisX930](https://forum.xentax.com/memberlist.php?mode=viewprofile&u=44998 "ChrisX930 at XeNTaX forum") for [UnityWebData file structure](https://forum.xentax.com/viewtopic.php?f=21&p=187239).
+- [Kaitai Struct](https://kaitai.io/ "Kaitai Struct").
 
 ## License
 
-UnityWebTools.NET are licensed under the [GNU General Public License v3.0 License](https://www.gnu.org/licenses/gpl-3.0.en.html).
+This project is licensed under GNU GPL 3.0.
+
+For more information about the GNU General Public License version 3.0 (GNU GPL 3.0), please refer to the official GNU website: https://www.gnu.org/licenses/gpl-3.0.html
+
+## Disclaimer
+
+This tool is intentionally created as a modding tool. I didn't condone any piracy in any forms such as taking the game visual and sell it illegally which harm the original developer. Use the tool at your own risk (DWYOR - Do What You Own Risk).
